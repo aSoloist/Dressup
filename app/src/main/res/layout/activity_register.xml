@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="system.dressup.RegisterActivity">
 
     <ProgressBar
         android:id="@+id/register_progress"
@@ -17,12 +25,95 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/phone_register_form"
+            android:id="@+id/user_register_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:weightSum="1">
 
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/back_to_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="@string/back"
+                android:textSize="20sp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="-20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_number"
+                    android:imeActionId="@+id/register_phone"
+                    android:imeActionLabel="@string/next"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:inputType="phone"
+                    android:layout_weight="6"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send"
+                    android:background="@drawable/place_shape"
+                    android:textColor="@color/colorButtonText"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/verification_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/verification_code"
+                    android:imeActionId="@+id/ime_verification_code"
+                    android:imeActionLabel="@string/next"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:maxLength="6" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_password"
+                    android:imeActionId="@+id/register_password"
+                    android:imeActionLabel="@string/action_sign_up_short"
+                    android:imeOptions="actionGo"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_sign_up_button"
+                android:background="@drawable/border_shape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="@string/action_sign_up"
+                android:textSize="20sp"
+                android:textColor="@color/colorButtonText" />
 
         </LinearLayout>
 

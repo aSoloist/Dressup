@@ -23,6 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name=".RegisterActivity">
+            <intent-filter>
+                <action android:name="system.dressup.action.SIGNUP" />
+                <category android:name="system.dressup.category.SIGNUP" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
