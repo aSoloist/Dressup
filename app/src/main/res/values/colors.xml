@@ -6,4 +6,5 @@
     <color name="colorButton">#ffcf00</color>
     <color name="colorButtonText">#fff</color>
     <color name="transparent">#00ffffff</color>
+    <color name="black">#0f0f0f</color>
 </resources>

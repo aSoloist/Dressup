@@ -1,10 +1,12 @@
-package system.dressup;
+package system.dressup.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+
+import system.dressup.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

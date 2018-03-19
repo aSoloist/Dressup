@@ -24,4 +24,6 @@
     <string name="register_password">请输入密码</string>
     <string name="action_sign_up">注册</string>
     <string name="action_sign_up_short">注册</string>
+    <string name="personal">个人中心</string>
+    <string name="personal_info">账户信息</string>
 </resources>
