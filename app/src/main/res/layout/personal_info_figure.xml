@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title" />
+
+    <ImageView
+        android:id="@+id/personal_image"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/test"
+        android:paddingTop="30sp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/personal_info" />
+
+    <Button
+        android:id="@+id/hairstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/hairstyle"
+        android:textSize="16sp"
+        android:background="@drawable/border_empty"
+        android:layout_toLeftOf="@id/personal_image"/>
+
+    <Button
+        android:id="@+id/facetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text="@string/facetype"
+        android:textSize="16sp"
+        android:background="@drawable/border_empty"
+        android:layout_toLeftOf="@id/personal_image"
+        android:layout_below="@id/hairstyle"/>
+
+    <Button
+        android:id="@+id/skincolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text="@string/skincolor"
+        android:textSize="16sp"
+        android:background="@drawable/border_empty"
+        android:layout_toLeftOf="@id/personal_image"
+        android:layout_below="@id/facetype"/>
+
+    <Button
+        android:id="@+id/height_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/height_weight"
+        android:textSize="16sp"
+        android:background="@drawable/border_empty"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/personal_image"/>
+
+    <Button
+        android:id="@+id/figure_partial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text="@string/figure_partial"
+        android:textSize="16sp"
+        android:background="@drawable/border_empty"
+        android:layout_toRightOf="@id/personal_image"
+        android:layout_below="@id/height_weight"/>
+
+</RelativeLayout>

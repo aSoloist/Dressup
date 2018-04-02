@@ -4,26 +4,26 @@
     <item
         android:icon="@android:drawable/sym_action_chat"
         android:orderInCategory="0"
-        android:title="主页" />
+        android:title="@string/main_page" />
 
     <item
         android:icon="@android:drawable/sym_action_chat"
         android:orderInCategory="1"
-        android:title="日程" />
+        android:title="@string/schedule" />
 
     <item
         android:icon="@android:drawable/sym_action_chat"
         android:orderInCategory="2"
-        android:title="衣柜" />
+        android:title="@string/wardrobe" />
 
     <item
         android:icon="@android:drawable/sym_action_chat"
         android:orderInCategory="3"
-        android:title="分享" />
+        android:title="@string/share" />
 
     <item
         android:icon="@android:drawable/sym_action_chat"
         android:orderInCategory="4"
-        android:title="个人" />
+        android:title="@string/personal" />
 
 </menu>

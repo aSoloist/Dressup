@@ -1,22 +1,32 @@
 package system.dressup.activity;
 
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
-import system.dressup.Fragment.MainPageFragment;
-import system.dressup.Fragment.PersonalFragment;
-import system.dressup.Fragment.ScheduleFragment;
-import system.dressup.Fragment.ShareFragment;
-import system.dressup.Fragment.WardrobeFragment;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import system.dressup.fragment.MainPageFragment;
+import system.dressup.fragment.PersonalFragment;
+import system.dressup.fragment.ScheduleFragment;
+import system.dressup.fragment.ShareFragment;
+import system.dressup.fragment.WardrobeFragment;
 import system.dressup.R;
+import system.dressup.view.NoScrollViewPager;
 
 /**
  * Created by idea on 2018/3/21.
@@ -24,10 +34,10 @@ import system.dressup.R;
  * @author Soloist
  */
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class MainActivity extends FragmentActivity implements ViewPager.OnPageChangeListener {
 
     private BottomNavigationView navigationView;
-    private ViewPager viewPager;
+    private NoScrollViewPager viewPager;
 
     private Fragment mainPage = new MainPageFragment();
     private Fragment schedule = new ScheduleFragment();
@@ -40,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
-        viewPager = (ViewPager) findViewById(R.id.viewPage);
+        viewPager = (NoScrollViewPager) findViewById(R.id.viewPage);
         viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -72,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         });
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        disableShiftMode(navigationView);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -95,5 +106,25 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    private static void disableShiftMode(BottomNavigationView view) {
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
+
+        try {
+            Field mShiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
+            mShiftingMode.setAccessible(true);
+            mShiftingMode.setBoolean(menuView, false);
+            mShiftingMode.setAccessible(false);
+            for (int i = 0; i < menuView.getChildCount(); i++) {
+                BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
+                item.setShiftingMode(false);
+                item.setChecked(item.getItemData().isChecked());
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 }

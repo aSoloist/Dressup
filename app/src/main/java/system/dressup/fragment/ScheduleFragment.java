@@ -1,4 +1,4 @@
-package system.dressup.Fragment;
+package system.dressup.fragment;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -15,11 +15,11 @@ import system.dressup.R;
  * @author Soloist
  */
 
-public class PersonalFragment extends Fragment {
+public class ScheduleFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.personal_layout, container, false);
+        return inflater.inflate(R.layout.schedule_layout, container, false);
     }
 }

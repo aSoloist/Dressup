@@ -24,6 +24,23 @@
     <string name="register_password">请输入密码</string>
     <string name="action_sign_up">注册</string>
     <string name="action_sign_up_short">注册</string>
-    <string name="personal">个人中心</string>
-    <string name="personal_info">账户信息</string>
+    <string name="personal">个人</string>
+    <string name="personal_info">身材信息</string>
+    <string name="share">分享</string>
+    <string name="wardrobe">衣柜</string>
+    <string name="personal_collection">我的收藏</string>
+    <string name="personal_message">我的消息</string>
+    <string name="personal_feedback">用户反馈</string>
+    <string name="personal_safety">账户与安全</string>
+    <string name="personal_clear">清除缓存</string>
+    <string name="personal_about">关于</string>
+    <string name="personal_exit">退出登录</string>
+    <string name="username">用户名</string>
+    <string name="main_page">主页</string>
+    <string name="schedule">日程</string>
+    <string name="hairstyle">发型</string>
+    <string name="facetype">脸型</string>
+    <string name="skincolor">肤色</string>
+    <string name="height_weight">身高体重</string>
+    <string name="figure_partial">身材局部</string>
 </resources>

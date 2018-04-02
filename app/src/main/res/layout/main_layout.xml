@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
+    <system.dressup.view.NoScrollViewPager
         android:id="@+id/viewPage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-    </android.support.v4.view.ViewPager>
+    </system.dressup.view.NoScrollViewPager>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -19,7 +19,8 @@
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_navigation_menu"
         app:itemBackground="@color/colorAccent"
-        app:itemIconTint="@color/colorButtonText">
+        app:itemIconTint="@drawable/item_selector"
+        app:itemTextColor="@drawable/item_selector">
 
     </android.support.design.widget.BottomNavigationView>
 

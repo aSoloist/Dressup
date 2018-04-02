@@ -111,6 +111,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/action_sign_up"
                 android:textSize="20sp"
                 android:textColor="@color/colorButtonText" />

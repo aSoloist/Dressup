@@ -1,4 +1,4 @@
-package system.dressup.Fragment;
+package system.dressup.fragment;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
